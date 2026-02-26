@@ -3,11 +3,11 @@ import { Zap } from "lucide-react";
 type Locale = "tr" | "en";
 
 const footerLinks = [
-  { id: "anasayfa", labelTr: "Anasayfa", labelEn: "Home" },
-  { id: "hakkimizda", labelTr: "Hakkımızda", labelEn: "About" },
-  { id: "hizmetler", labelTr: "Hizmetler", labelEn: "Services" },
-  { id: "urunler", labelTr: "Ürünler", labelEn: "Products" },
-  { id: "iletisim", labelTr: "İletişim", labelEn: "Contact" },
+  { href: "", labelTr: "Anasayfa", labelEn: "Home" },
+  { href: "/hakkimizda", labelTr: "Hakkımızda", labelEn: "About" },
+  { href: "/hizmetler", labelTr: "Hizmetler", labelEn: "Services" },
+  { href: "/urunler", labelTr: "Ürünler", labelEn: "Products" },
+  { href: "/iletisim", labelTr: "İletişim", labelEn: "Contact" },
 ];
 
 export default function Footer({ locale }: { locale: Locale }) {
@@ -43,8 +43,8 @@ export default function Footer({ locale }: { locale: Locale }) {
             <nav className="mt-4 flex flex-col gap-2">
               {footerLinks.map((link) => (
                 <a
-                  key={link.id}
-                  href={`#${link.id}`}
+                  key={link.href}
+                  href={`/${locale}${link.href}`}
                   className="text-sm text-slate-600 transition-colors hover:text-rasyatek-primary"
                 >
                   {isEn ? link.labelEn : link.labelTr}

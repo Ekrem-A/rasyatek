@@ -35,8 +35,7 @@ export default function ServicesSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      id="hizmetler"
-      className="section-divider scroll-mt-24 py-20"
+      className="py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         {/* Başlık */}

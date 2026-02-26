@@ -55,8 +55,7 @@ export default function ValuesSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      id="degerler"
-      className="section-divider scroll-mt-24 bg-slate-50/60 py-20"
+      className="bg-slate-50/60 py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">

@@ -7,8 +7,7 @@ export default function ContactSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      id="iletisim"
-      className="scroll-mt-24 py-20"
+      className="py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         {/* Başlık */}

@@ -8,7 +8,6 @@ export default function HeroSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      id="anasayfa"
       className="relative overflow-hidden pb-20 pt-12 md:pt-20"
     >
       {/* Dekoratif arka plan */}
@@ -61,14 +60,14 @@ export default function HeroSection({ locale }: { locale: Locale }) {
 
             <div className="animate-fade-in-up delay-300 flex flex-wrap gap-4">
               <a
-                href="#iletisim"
+                href={`/${locale}/iletisim`}
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-rasyatek-primary px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-rasyatek-primary/25 transition-all hover:bg-sky-700 hover:shadow-xl hover:shadow-rasyatek-primary/30"
               >
                 {isEn ? "Request a Quote" : "Teklif / Proje Talebi"}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href="#hizmetler"
+                href={`/${locale}/hizmetler`}
                 className="group inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold text-slate-700 transition-all hover:border-rasyatek-primary hover:text-rasyatek-primary"
               >
                 {isEn ? "Explore Services" : "Hizmetlerimiz"}

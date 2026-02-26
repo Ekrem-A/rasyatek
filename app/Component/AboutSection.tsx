@@ -7,8 +7,7 @@ export default function AboutSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      id="hakkimizda"
-      className="section-divider scroll-mt-24 py-20"
+      className="py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="grid gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">

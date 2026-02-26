@@ -37,8 +37,7 @@ export default function ProductsSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      id="urunler"
-      className="section-divider scroll-mt-24 bg-slate-50/60 py-20"
+      className="bg-slate-50/60 py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         {/* Başlık */}

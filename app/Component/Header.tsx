@@ -6,14 +6,14 @@ import { Menu, X } from "lucide-react";
 
 type Locale = "tr" | "en";
 
-const sections = [
-  { id: "anasayfa", labelTr: "Anasayfa", labelEn: "Home" },
-  { id: "hakkimizda", labelTr: "Hakkımızda", labelEn: "About" },
-  { id: "degerler", labelTr: "Değerlerimiz", labelEn: "Our Values" },
-  { id: "vizyon-misyon", labelTr: "Vizyon & Misyon", labelEn: "Vision & Mission" },
-  { id: "urunler", labelTr: "Ürünler", labelEn: "Products" },
-  { id: "hizmetler", labelTr: "Hizmetler", labelEn: "Services" },
-  { id: "iletisim", labelTr: "İletişim", labelEn: "Contact" },
+const navLinks = [
+  { href: "", labelTr: "Anasayfa", labelEn: "Home" },
+  { href: "/hakkimizda", labelTr: "Hakkımızda", labelEn: "About" },
+  { href: "/degerler", labelTr: "Değerlerimiz", labelEn: "Our Values" },
+  { href: "/vizyon-misyon", labelTr: "Vizyon & Misyon", labelEn: "Vision & Mission" },
+  { href: "/urunler", labelTr: "Ürünler", labelEn: "Products" },
+  { href: "/hizmetler", labelTr: "Hizmetler", labelEn: "Services" },
+  { href: "/iletisim", labelTr: "İletişim", labelEn: "Contact" },
 ] as const;
 
 export default function Header({ locale }: { locale: Locale }) {
@@ -65,13 +65,13 @@ export default function Header({ locale }: { locale: Locale }) {
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-1 text-sm font-medium text-slate-600 lg:flex">
-          {sections.map((section) => (
+          {navLinks.map((link) => (
             <a
-              key={section.id}
-              href={`#${section.id}`}
+              key={link.href}
+              href={`/${locale}${link.href}`}
               className="relative rounded-lg px-3 py-2 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
             >
-              {isEn ? section.labelEn : section.labelTr}
+              {isEn ? link.labelEn : link.labelTr}
             </a>
           ))}
           <div className="mx-2 h-5 w-px bg-slate-200" />
@@ -136,14 +136,14 @@ export default function Header({ locale }: { locale: Locale }) {
           </button>
         </div>
         <nav className="flex-1 overflow-y-auto px-3 py-4">
-          {sections.map((section) => (
+          {navLinks.map((link) => (
             <a
-              key={section.id}
-              href={`#${section.id}`}
+              key={link.href}
+              href={`/${locale}${link.href}`}
               onClick={() => setMobileOpen(false)}
               className="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
             >
-              {isEn ? section.labelEn : section.labelTr}
+              {isEn ? link.labelEn : link.labelTr}
             </a>
           ))}
         </nav>
