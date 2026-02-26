@@ -8,7 +8,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="relative overflow-hidden pb-20 pt-12 md:pt-20"
+      className="relative overflow-hidden px-0 pb-12 pt-8 sm:pb-20 sm:pt-12 md:pt-20"
     >
       {/* Dekoratif arka plan */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -17,7 +17,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="grid gap-12 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-center">
+        <div className="grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] md:items-center">
           {/* Sol İçerik */}
           <div className="space-y-8">
             <div className="animate-fade-in-up">
@@ -29,7 +29,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
               </span>
             </div>
 
-            <h1 className="animate-fade-in-up delay-100 text-balance text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl xl:text-[3.25rem] xl:leading-[1.15]">
+            <h1 className="animate-fade-in-up delay-100 text-balance text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.25rem] xl:leading-[1.15]">
               {isEn ? "From housing to industrial plants " : "Konuttan endüstriyel tesislere "}
               <span className="gradient-text">
                 {isEn
@@ -38,7 +38,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
               </span>
             </h1>
 
-            <p className="animate-fade-in-up delay-200 max-w-xl text-base leading-relaxed text-slate-600 md:text-lg">
+            <p className="animate-fade-in-up delay-200 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base md:text-lg">
               {isEn ? (
                 <>
                   Rasyatek Engineering Investment Co. has been actively operating in the
@@ -58,7 +58,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
               )}
             </p>
 
-            <div className="animate-fade-in-up delay-300 flex flex-wrap gap-4">
+            <div className="animate-fade-in-up delay-300 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <a
                 href={`/${locale}/iletisim`}
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-rasyatek-primary px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-rasyatek-primary/25 transition-all hover:bg-sky-700 hover:shadow-xl hover:shadow-rasyatek-primary/30"
@@ -76,7 +76,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
             </div>
 
             {/* İstatistik kartları */}
-            <div className="animate-fade-in-up delay-400 grid gap-4 sm:grid-cols-3">
+            <div className="animate-fade-in-up delay-400 grid gap-3 grid-cols-1 sm:grid-cols-3 sm:gap-4">
               {[
                 {
                   icon: <Zap size={18} />,
@@ -130,7 +130,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
           </div>
 
           {/* Sağ Kart */}
-          <div className="animate-slide-in-right delay-300 flex justify-center md:justify-end">
+          <div className="hidden animate-slide-in-right delay-300 md:flex md:justify-end">
             <div className="relative w-full max-w-sm animate-float">
               {/* Glow */}
               <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-rasyatek-primary/10 via-transparent to-rasyatek-accent/10 blur-2xl" />

@@ -7,7 +7,7 @@ export default function ContactSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="py-20"
+      className="py-12 sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         {/* Başlık */}
@@ -16,7 +16,7 @@ export default function ContactSection({ locale }: { locale: Locale }) {
             <MessageSquare size={14} />
             {isEn ? "Contact" : "İletişim"}
           </div>
-          <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl lg:text-4xl">
+          <h2 className="mt-4 text-xl font-bold tracking-tight text-slate-900 sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
             {isEn ? "Let's plan the " : "Projeniz için birlikte en "}
             <span className="gradient-text">
               {isEn ? "right solution " : "doğru çözümü "}
@@ -33,7 +33,7 @@ export default function ContactSection({ locale }: { locale: Locale }) {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
           {/* Form */}
           <div className="animate-fade-in-up">
-            <form className="rounded-3xl bg-white p-6 shadow-lg ring-1 ring-slate-100 md:p-8">
+            <form className="rounded-2xl bg-white p-4 shadow-lg ring-1 ring-slate-100 sm:rounded-3xl sm:p-6 md:p-8">
               <div className="grid gap-5">
                 <div className="grid gap-2">
                   <label
@@ -121,7 +121,7 @@ export default function ContactSection({ locale }: { locale: Locale }) {
                 </div>
                 <button
                   type="button"
-                  className="group mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-rasyatek-primary px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rasyatek-primary/25 transition-all hover:bg-sky-700 hover:shadow-xl md:w-max"
+                  className="group mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-rasyatek-primary px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rasyatek-primary/25 transition-all hover:bg-sky-700 hover:shadow-xl sm:w-max"
                 >
                   <Send size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   {isEn ? "Send Form" : "Formu Gönder"}
@@ -136,8 +136,8 @@ export default function ContactSection({ locale }: { locale: Locale }) {
           </div>
 
           {/* İletişim Bilgileri */}
-          <div className="animate-slide-in-right delay-200 lg:sticky lg:top-28">
-            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-2xl">
+          <div className="animate-fade-in-up delay-200 lg:sticky lg:top-28">
+            <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-5 text-white shadow-2xl sm:rounded-3xl sm:p-8">
               {/* Dekoratif */}
               <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-rasyatek-primary/10 blur-3xl" />
 

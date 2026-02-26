@@ -7,12 +7,12 @@ export default function VisionMissionSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="py-20"
+      className="py-12 sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-5 sm:gap-8 md:grid-cols-2">
           {/* Vizyon */}
-          <div className="animate-fade-in-up card-hover group relative overflow-hidden rounded-3xl bg-gradient-to-br from-rasyatek-primary-soft via-white to-sky-50 p-8 ring-1 ring-sky-100">
+          <div className="animate-fade-in-up card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br from-rasyatek-primary-soft via-white to-sky-50 p-5 ring-1 ring-sky-100 sm:rounded-3xl sm:p-8">
             {/* Dekoratif arka plan */}
             <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-rasyatek-primary/5 transition-transform duration-500 group-hover:scale-150" />
 
@@ -23,7 +23,7 @@ export default function VisionMissionSection({ locale }: { locale: Locale }) {
               <h2 className="mt-5 text-sm font-semibold uppercase tracking-[0.25em] text-rasyatek-primary">
                 {isEn ? "Our Vision" : "Vizyonumuz"}
               </h2>
-              <p className="mt-3 text-xl font-bold tracking-tight text-slate-900">
+              <p className="mt-3 text-lg font-bold tracking-tight text-slate-900 sm:text-xl">
                 {isEn
                   ? "To be a trusted, preferred and reference engineering company in the sector."
                   : "Sektöründe güvenilir, tercih edilen ve referans gösterilen bir mühendislik firması olmak."}
@@ -37,7 +37,7 @@ export default function VisionMissionSection({ locale }: { locale: Locale }) {
           </div>
 
           {/* Misyon */}
-          <div className="animate-fade-in-up delay-200 card-hover group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 text-white ring-1 ring-slate-700/50">
+          <div className="animate-fade-in-up delay-200 card-hover group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-5 text-white ring-1 ring-slate-700/50 sm:rounded-3xl sm:p-8">
             {/* Dekoratif arka plan */}
             <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-rasyatek-primary/10 transition-transform duration-500 group-hover:scale-150" />
 
@@ -48,7 +48,7 @@ export default function VisionMissionSection({ locale }: { locale: Locale }) {
               <h2 className="mt-5 text-sm font-semibold uppercase tracking-[0.25em] text-sky-300">
                 {isEn ? "Our Mission" : "Misyonumuz"}
               </h2>
-              <p className="mt-3 text-xl font-bold tracking-tight text-white">
+              <p className="mt-3 text-lg font-bold tracking-tight text-white sm:text-xl">
                 {isEn
                   ? "To produce safe, sustainable and high-quality solutions in electrical and engineering projects."
                   : "Güvenli, sürdürülebilir ve kaliteli elektrik & mühendislik çözümleri üretmek."}

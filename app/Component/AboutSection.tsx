@@ -7,17 +7,17 @@ export default function AboutSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="py-20"
+      className="py-12 sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="grid gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+        <div className="grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
           {/* Sol Başlık */}
           <div className="animate-fade-in-up">
             <div className="inline-flex items-center gap-2 rounded-full bg-rasyatek-primary-soft px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-rasyatek-primary">
               <Users size={14} />
               {isEn ? "About" : "Hakkımızda"}
             </div>
-            <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl lg:text-4xl">
+            <h2 className="mt-4 text-xl font-bold tracking-tight text-slate-900 sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
               {isEn ? "We bring together field " : "Sahadan gelen tecrübe ile "}
               <span className="gradient-text">
                 {isEn

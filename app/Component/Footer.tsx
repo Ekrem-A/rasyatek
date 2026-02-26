@@ -17,7 +17,7 @@ export default function Footer({ locale }: { locale: Locale }) {
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         {/* Üst bölüm */}
-        <div className="grid gap-8 py-12 md:grid-cols-3">
+        <div className="grid gap-6 py-8 sm:gap-8 sm:py-12 md:grid-cols-3">
           {/* Logo / Slogan */}
           <div>
             <div className="flex items-center gap-2">
@@ -66,8 +66,8 @@ export default function Footer({ locale }: { locale: Locale }) {
         </div>
 
         {/* Alt çizgi */}
-        <div className="border-t border-slate-100 py-5">
-          <div className="flex flex-col gap-2 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
+        <div className="border-t border-slate-100 py-4 sm:py-5">
+          <div className="flex flex-col gap-2 text-[11px] text-slate-400 sm:text-xs md:flex-row md:items-center md:justify-between">
             <p>
               © {new Date().getFullYear()} Rasyatek Mühendislik Yatırım Ltd. Şti.{" "}
               {isEn ? "All rights reserved." : "Tüm hakları saklıdır."}

@@ -55,7 +55,7 @@ export default function ValuesSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="bg-slate-50/60 py-20"
+      className="bg-slate-50/60 py-12 sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
@@ -65,7 +65,7 @@ export default function ValuesSection({ locale }: { locale: Locale }) {
               <Heart size={14} />
               {isEn ? "Our Values" : "Değerlerimiz"}
             </div>
-            <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl lg:text-4xl">
+            <h2 className="mt-4 text-xl font-bold tracking-tight text-slate-900 sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
               {isEn ? "We see engineering as " : "Mühendisliği sorumluluk gerektiren bir "}
               <span className="gradient-text">
                 {isEn ? "a responsibility." : "iş olarak görüyoruz."}

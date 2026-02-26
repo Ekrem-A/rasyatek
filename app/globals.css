@@ -28,6 +28,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   @apply bg-white text-slate-900 antialiased;
 }
 
@@ -118,4 +119,17 @@ body {
 .section-divider::after {
   content: "";
   @apply absolute bottom-0 left-1/2 h-px w-24 -translate-x-1/2 bg-gradient-to-r from-transparent via-rasyatek-primary/30 to-transparent;
+}
+
+/* Mobil iyileştirmeler */
+@media (max-width: 640px) {
+  .animate-slide-in-right {
+    animation: fade-in-up 0.7s ease-out both;
+  }
+  .animate-float {
+    animation: none;
+  }
+  .card-hover:hover {
+    transform: none;
+  }
 }

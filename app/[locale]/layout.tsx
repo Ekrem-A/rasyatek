@@ -8,9 +8,10 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: raw } = await params;
+  const locale = (raw === "en" ? "en" : "tr") as Locale;
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">

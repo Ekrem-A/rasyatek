@@ -37,7 +37,7 @@ export default function ProductsSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="bg-slate-50/60 py-20"
+      className="bg-slate-50/60 py-12 sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         {/* Başlık */}
@@ -46,7 +46,7 @@ export default function ProductsSection({ locale }: { locale: Locale }) {
             <Package size={14} />
             {isEn ? "Our Products" : "Ürünlerimiz"}
           </div>
-          <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl lg:text-4xl">
+          <h2 className="mt-4 text-xl font-bold tracking-tight text-slate-900 sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
             {isEn ? "High-performance " : "Yüksek performanslı "}
             <span className="gradient-text">
               {isEn ? "power quality and panel solutions" : "güç kalitesi ve pano çözümleri"}
@@ -60,7 +60,7 @@ export default function ProductsSection({ locale }: { locale: Locale }) {
         </div>
 
         {/* Ürün Kartları */}
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:mt-14 sm:gap-6 md:grid-cols-3">
           {productsData.map((product, i) => (
             <div
               key={i}

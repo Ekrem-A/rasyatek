@@ -35,7 +35,7 @@ export default function ServicesSection({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="py-20"
+      className="py-12 sm:py-20"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         {/* Başlık */}
@@ -44,7 +44,7 @@ export default function ServicesSection({ locale }: { locale: Locale }) {
             <Cog size={14} />
             {isEn ? "Our Services" : "Hizmetlerimiz"}
           </div>
-          <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl lg:text-4xl">
+          <h2 className="mt-4 text-xl font-bold tracking-tight text-slate-900 sm:mt-5 sm:text-2xl md:text-3xl lg:text-4xl">
             {isEn ? "We manage the entire " : "Projelendirmeden saha uygulamasına kadar "}
             <span className="gradient-text">
               {isEn ? "process from design to site." : "tüm süreci yönetiyoruz."}
@@ -58,7 +58,7 @@ export default function ServicesSection({ locale }: { locale: Locale }) {
         </div>
 
         {/* Hizmet Kartları */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:mt-14 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <div
               key={service.slug}
