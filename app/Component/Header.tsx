@@ -149,15 +149,14 @@ export default function Header({ locale }: { locale: Locale }) {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
           {/* Logo */}
           <a href={`/${locale}`} className="flex items-center gap-3 group">
-            <div className="relative h-10 w-28 sm:w-32 md:h-12 md:w-40 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/rasyatek-logo.png"
-                alt="Rasyatek Mühendislik Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+            <Image
+              src="/rasyatek-logo.png"
+              alt="Rasyatek Mühendislik Logo"
+              width={160}
+              height={48}
+              className="h-9 w-auto sm:h-10 md:h-12 object-contain"
+              priority
+            />
             <div className="hidden flex-col text-xs leading-snug text-slate-600 lg:flex">
               <span className="font-semibold tracking-wide text-rasyatek-primary">
                 RASYATEK MÜHENDİSLİK
