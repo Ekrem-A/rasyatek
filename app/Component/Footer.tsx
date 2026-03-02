@@ -60,7 +60,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             </p>
             <div className="mt-4 space-y-2 text-sm text-slate-600">
               <p>info@rasyatek.com</p>
-              <p>+90 (___) ___ __ __</p>
+              <p>+90 () ___ __ __</p>
             </div>
           </div>
         </div>

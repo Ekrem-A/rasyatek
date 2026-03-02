@@ -167,7 +167,7 @@ export default function ContactSection({ locale }: { locale: Locale }) {
                       {isEn ? "Phone" : "Telefon"}
                     </p>
                     <p className="mt-1 text-sm text-slate-400">
-                      +90 (___) ___ __ __
+                      +90 (553) 770 91 20
                     </p>
                   </div>
                 </div>

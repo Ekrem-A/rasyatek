@@ -1,13 +1,41 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, Users, Heart, Eye, Package, Cog } from "lucide-react";
 
 type Locale = "tr" | "en";
 
-const navLinks = [
+/* ─── Düz linkler ─── */
+const simpleLinks = [
+  { href: "", labelTr: "Anasayfa", labelEn: "Home" },
+  { href: "/iletisim", labelTr: "İletişim", labelEn: "Contact" },
+] as const;
+
+/* ─── Dropdown grupları ─── */
+const dropdownGroups = [
+  {
+    labelTr: "Kurumsal",
+    labelEn: "Corporate",
+    children: [
+      { href: "/hakkimizda", labelTr: "Hakkımızda", labelEn: "About", icon: <Users size={16} /> },
+      { href: "/degerler", labelTr: "Değerlerimiz", labelEn: "Our Values", icon: <Heart size={16} /> },
+      { href: "/vizyon-misyon", labelTr: "Vizyon & Misyon", labelEn: "Vision & Mission", icon: <Eye size={16} /> },
+    ],
+  },
+  {
+    labelTr: "Çözümler",
+    labelEn: "Solutions",
+    children: [
+      { href: "/urunler", labelTr: "Ürünler", labelEn: "Products", icon: <Package size={16} /> },
+      { href: "/hizmetler", labelTr: "Hizmetler", labelEn: "Services", icon: <Cog size={16} /> },
+    ],
+  },
+] as const;
+
+/* ─── All nav links for mobile ─── */
+const allNavLinks = [
   { href: "", labelTr: "Anasayfa", labelEn: "Home" },
   { href: "/hakkimizda", labelTr: "Hakkımızda", labelEn: "About" },
   { href: "/degerler", labelTr: "Değerlerimiz", labelEn: "Our Values" },
@@ -15,7 +43,80 @@ const navLinks = [
   { href: "/urunler", labelTr: "Ürünler", labelEn: "Products" },
   { href: "/hizmetler", labelTr: "Hizmetler", labelEn: "Services" },
   { href: "/iletisim", labelTr: "İletişim", labelEn: "Contact" },
-] as const;
+];
+
+/* ─── Desktop Dropdown Bileşeni ─── */
+function NavDropdown({
+  locale,
+  isEn,
+  labelTr,
+  labelEn,
+  children,
+}: {
+  locale: Locale;
+  isEn: boolean;
+  labelTr: string;
+  labelEn: string;
+  children: readonly { href: string; labelTr: string; labelEn: string; icon: React.ReactNode }[];
+}) {
+  const [open, setOpen] = useState(false);
+  const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const enter = () => {
+    if (timeout.current) clearTimeout(timeout.current);
+    setOpen(true);
+  };
+  const leave = () => {
+    timeout.current = setTimeout(() => setOpen(false), 150);
+  };
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={enter}
+      onMouseLeave={leave}
+    >
+      {/* Trigger */}
+      <button
+        className="inline-flex items-center gap-1 rounded-lg px-3 py-2 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+      >
+        {isEn ? labelEn : labelTr}
+        <ChevronDown
+          size={14}
+          className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {/* Dropdown panel */}
+      <div
+        className={`absolute left-1/2 top-full z-50 pt-2 -translate-x-1/2 transition-all duration-300 ${
+          open
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
+      >
+        <div className="min-w-[220px] overflow-hidden rounded-2xl bg-white p-2 shadow-xl ring-1 ring-slate-100">
+          {children.map((child) => (
+            <a
+              key={child.href}
+              href={`/${locale}${child.href}`}
+              className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary hover:translate-x-0.5"
+            >
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-400 transition-colors duration-200 group-hover:bg-rasyatek-primary-soft group-hover:text-rasyatek-primary">
+                {child.icon}
+              </span>
+              {isEn ? child.labelEn : child.labelTr}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function MobileMenu({
   locale,
@@ -80,7 +181,7 @@ function MobileMenu({
 
         {/* Links */}
         <nav className="flex-1 overflow-y-auto px-3 py-3">
-          {navLinks.map((link) => (
+          {allNavLinks.map((link) => (
             <a
               key={link.href}
               href={`/${locale}${link.href}`}
@@ -152,32 +253,44 @@ export default function Header({ locale }: { locale: Locale }) {
             <Image
               src="/rasyatek-logo.png"
               alt="Rasyatek Mühendislik Logo"
-              width={160}
-              height={48}
-              className="h-9 w-auto sm:h-10 md:h-12 object-contain"
+              width={320}
+              height={120}
+              className="h-16 w-auto sm:h-[4.5rem] md:h-[5.5rem] object-contain drop-shadow-md"
               priority
             />
-            <div className="hidden flex-col text-xs leading-snug text-slate-600 lg:flex">
-              <span className="font-semibold tracking-wide text-rasyatek-primary">
-                RASYATEK MÜHENDİSLİK
-              </span>
-              <span className="text-slate-500">
-                {isEn ? "Smart engineering solutions" : "Akılcı mühendislik çözümleri"}
-              </span>
-            </div>
           </a>
+         
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-1 text-sm font-medium text-slate-600 lg:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={`/${locale}${link.href}`}
-                className="relative rounded-lg px-3 py-2 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
-              >
-                {isEn ? link.labelEn : link.labelTr}
-              </a>
+          <nav className="hidden items-center gap-1 text-[15px] font-medium text-slate-600 lg:flex">
+            {/* Anasayfa */}
+            <a
+              href={`/${locale}`}
+              className="relative rounded-lg px-3 py-2 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
+            >
+              {isEn ? "Home" : "Anasayfa"}
+            </a>
+
+            {/* Dropdown grupları */}
+            {dropdownGroups.map((group) => (
+              <NavDropdown
+                key={group.labelTr}
+                locale={locale}
+                isEn={isEn}
+                labelTr={group.labelTr}
+                labelEn={group.labelEn}
+                children={group.children}
+              />
             ))}
+
+            {/* İletişim */}
+            <a
+              href={`/${locale}/iletisim`}
+              className="relative rounded-lg px-3 py-2 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
+            >
+              {isEn ? "Contact" : "İletişim"}
+            </a>
+
             <div className="mx-2 h-5 w-px bg-slate-200" />
             <div className="flex items-center gap-1 rounded-full bg-slate-100 p-1 text-xs font-semibold tracking-wide">
               <a

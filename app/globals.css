@@ -74,6 +74,21 @@ body {
   50% { transform: translateY(-8px); }
 }
 
+@keyframes pulse-banner {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.7s ease-out both;
 }
@@ -88,6 +103,20 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-banner {
+  animation: pulse-banner 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
 }
 
 /* Gecikme sınıfları */
@@ -132,4 +161,42 @@ body {
   .card-hover:hover {
     transform: none;
   }
+}
+
+/* ─── Modern Glassmorphism ─── */
+.glass {
+  @apply bg-white/60 backdrop-blur-xl;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-dark {
+  @apply bg-slate-900/60 backdrop-blur-xl;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Modern glow efektleri ─── */
+.glow-primary {
+  box-shadow:
+    0 0 20px rgba(0, 96, 170, 0.15),
+    0 0 60px rgba(0, 96, 170, 0.05);
+}
+
+.glow-accent {
+  box-shadow:
+    0 0 20px rgba(0, 180, 216, 0.15),
+    0 0 60px rgba(0, 180, 216, 0.05);
+}
+
+/* ─── Scrollbar modernize ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-slate-300;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-rasyatek-primary/50;
 }

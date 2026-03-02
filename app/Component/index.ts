@@ -1,5 +1,7 @@
 export { default } from "./Header";
 export { default as HeroSection } from "./HeroSection";
+export { default as HeroSlider } from "./HeroSlider";
+export { default as PageBanner } from "./PageBanner";
 export { default as AboutSection } from "./AboutSection";
 export { default as ValuesSection } from "./ValuesSection";
 export { default as VisionMissionSection } from "./VisionMissionSection";
