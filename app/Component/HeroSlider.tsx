@@ -245,7 +245,7 @@ export default function HeroSlider({ locale }: { locale: Locale }) {
       </div>
 
       {/* Bottom fade to white */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 h-16 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 z-20 h-6 bg-gradient-to-t from-white to-transparent" />
 
       {/* Top gradient for header blend */}
       <div className="absolute left-0 right-0 top-0 z-20 h-24 bg-gradient-to-b from-black/20 to-transparent" />

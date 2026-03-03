@@ -83,8 +83,8 @@ export default function Footer({ locale }: { locale: Locale }) {
               {isEn ? "Contact" : "İletişim"}
             </p>
             <div className="mt-4 space-y-2 text-sm text-slate-600">
-              <p>info@rasyatek.com</p>
-              <p>+90 () 553 770 9120</p>
+              <p>resul.ankara@rasyatek.com</p>
+              <p>+90 (553) 770 91 20</p>
             </div>
           </div>
         </div>
