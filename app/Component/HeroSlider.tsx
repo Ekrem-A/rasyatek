@@ -44,7 +44,7 @@ const slides: Slide[] = [
     titleTr: "Yüksek Gerilim İşletme\nSorumluluğu & Ölçüm",
     titleEn: "High Voltage Operation\nResponsibility & Measurement",
     subtitleTr:
-      "Trafo merkezleri ve OG hücreler için mevzuata uygun işletme, periyodik bakım ve ölçüm hizmetleri.",
+      "Trafo merkezleri ve OG hücreler için mevzuata uygun işletme, periyodik bakım ve ölçüm hizmetleri sunuyoruz.",
     subtitleEn:
       "Operation, periodic maintenance and measurement services for transformer substations and MV switchgears.",
     ctaLabelTr: "Hizmetlerimizi Keşfedin",

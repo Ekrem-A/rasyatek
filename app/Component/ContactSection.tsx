@@ -312,19 +312,13 @@ export default function ContactSection({ locale }: { locale: Locale }) {
                     </p>
                     <p className="mt-1 text-sm text-slate-400">
                       {isEn
-                        ? "Office address will be placed here."
-                        : "Ofis adresi bilgisi buraya gelecektir."}
+                        ? "İdealtepe Mahallesi Dik Sokak No:13 İç Kapı No:2 Maltepe/İstanbul"
+                        : "İdealtepe Mahallesi Dik Sokak No:13 İç Kapı No:2 Maltepe/İstanbul"}
                     </p>
                   </div>
                 </div>
                 <div className="h-px bg-slate-700/80" />
               </div>
-
-              <p className="mt-6 text-[11px] leading-relaxed text-slate-500">
-                {isEn
-                  ? "Contact details can be updated with your corporate information once finalized."
-                  : "Konum ve iletişim detayları hazır olduğunda kurumsal bilgilerinizle güncellenebilir."}
-              </p>
             </div>
           </div>
         </div>
