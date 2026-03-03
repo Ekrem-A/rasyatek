@@ -80,7 +80,7 @@ function NavDropdown({
     >
       {/* Trigger */}
       <button
-        className="inline-flex items-center gap-1 rounded-lg px-3 py-2 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
+        className="nav-link-animated relative inline-flex items-center gap-1 rounded-lg px-3 py-2 transition-all duration-300 hover:text-rasyatek-primary"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
       >
@@ -89,6 +89,7 @@ function NavDropdown({
           size={14}
           className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
         />
+        <span className="nav-underline" />
       </button>
 
       {/* Dropdown panel */}
@@ -99,14 +100,15 @@ function NavDropdown({
             : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
-        <div className="min-w-[220px] overflow-hidden rounded-2xl bg-white p-2 shadow-xl ring-1 ring-slate-100">
-          {children.map((child) => (
+        <div className="min-w-[230px] overflow-hidden rounded-2xl bg-white/95 p-2 shadow-2xl shadow-rasyatek-primary/8 ring-1 ring-slate-100/80 backdrop-blur-lg">
+          {children.map((child, idx) => (
             <a
               key={child.href}
               href={`/${locale}${child.href}`}
-              className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary hover:translate-x-0.5"
+              className="group/item flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-all duration-200 hover:bg-gradient-to-r hover:from-rasyatek-primary/5 hover:to-rasyatek-accent/5 hover:text-rasyatek-primary hover:translate-x-1"
+              style={{ animationDelay: `${idx * 50}ms` }}
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-400 transition-colors duration-200 group-hover:bg-rasyatek-primary-soft group-hover:text-rasyatek-primary">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-50 text-slate-400 transition-all duration-300 group-hover/item:bg-rasyatek-primary group-hover/item:text-white group-hover/item:shadow-md group-hover/item:shadow-rasyatek-primary/25 group-hover/item:scale-110">
                 {child.icon}
               </span>
               {isEn ? child.labelEn : child.labelTr}
@@ -241,38 +243,45 @@ export default function Header({ locale }: { locale: Locale }) {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+        className={`sticky top-0 z-50 border-b transition-all duration-500 ${
           scrolled
-            ? "border-slate-200/80 bg-white/95 shadow-sm backdrop-blur-lg"
-            : "border-transparent bg-white/90 backdrop-blur"
+            ? "border-slate-200/60 bg-white/90 shadow-lg shadow-slate-900/5 backdrop-blur-xl"
+            : "border-transparent bg-white/80 backdrop-blur-md"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
           {/* Logo */}
-          <a href={`/${locale}`} className="flex items-center gap-3 group">
+          <a href={`/${locale}`} className="relative flex items-center gap-3 group">
+            {/* Glow aura */}
+            <div className="pointer-events-none absolute -inset-3 rounded-2xl bg-gradient-to-r from-rasyatek-primary/0 via-rasyatek-primary/8 to-rasyatek-accent/0 opacity-0 blur-xl transition-all duration-700 group-hover:opacity-100 group-hover:blur-2xl" />
+            <div className="pointer-events-none absolute -inset-1 rounded-xl bg-gradient-to-br from-rasyatek-primary/5 to-rasyatek-accent/5 opacity-0 transition-all duration-500 group-hover:opacity-100" />
             <Image
               src="/rasyatek-logo.png"
               alt="Rasyatek Mühendislik Logo"
               width={320}
               height={120}
-              className="h-16 w-auto sm:h-[4.5rem] md:h-[5.5rem] object-contain drop-shadow-md"
+              className="relative h-16 w-auto sm:h-[4.5rem] md:h-[5.5rem] object-contain transition-all duration-500 group-hover:scale-[1.03] group-hover:brightness-110"
+              style={{
+                filter: "drop-shadow(0 2px 8px rgba(0,96,170,0.18)) drop-shadow(0 6px 20px rgba(0,96,170,0.08))",
+              }}
               priority
             />
-          </a>
-         
+          </a>        
 
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-1 text-[15px] font-medium text-slate-600 lg:flex">
             {/* Anasayfa */}
             <a
               href={`/${locale}`}
-              className="relative rounded-lg px-3 py-2 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
+              className="nav-link-animated relative rounded-lg px-3 py-2 transition-all duration-300 hover:text-rasyatek-primary"
+              style={{ animationDelay: "0.1s" }}
             >
               {isEn ? "Home" : "Anasayfa"}
+              <span className="nav-underline" />
             </a>
 
             {/* Dropdown grupları */}
-            {dropdownGroups.map((group) => (
+            {dropdownGroups.map((group, i) => (
               <NavDropdown
                 key={group.labelTr}
                 locale={locale}
@@ -286,9 +295,11 @@ export default function Header({ locale }: { locale: Locale }) {
             {/* İletişim */}
             <a
               href={`/${locale}/iletisim`}
-              className="relative rounded-lg px-3 py-2 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
+              className="nav-link-animated relative rounded-lg px-3 py-2 transition-all duration-300 hover:text-rasyatek-primary"
+              style={{ animationDelay: "0.4s" }}
             >
               {isEn ? "Contact" : "İletişim"}
+              <span className="nav-underline" />
             </a>
 
             <div className="mx-2 h-5 w-px bg-slate-200" />
