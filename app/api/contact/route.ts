@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import crypto from "crypto";
 
 export async function POST(req: NextRequest) {
   try {
@@ -31,6 +32,15 @@ export async function POST(req: NextRequest) {
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
+      },
+      tls: {
+        // Mail sunucusu eski SSL kullanıyor — legacy renegotiation'a izin ver
+        rejectUnauthorized: false,
+        ciphers: "SSLv3",
+        secureOptions:
+          crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT |
+          crypto.constants.SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION,
+        minVersion: "TLSv1" as any,
       },
     });
 

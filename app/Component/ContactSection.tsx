@@ -280,6 +280,18 @@ export default function ContactSection({ locale }: { locale: Locale }) {
                 <div className="h-px bg-slate-700/80" />
                 <div className="flex items-start gap-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-sky-300">
+                    <Mail size={16} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-slate-200">E-mail</p>
+                    <p className="mt-1 text-sm text-slate-400">
+                      info@rasyatek.com
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-sky-300">
                     <Phone size={16} />
                   </div>
                   <div>
@@ -291,17 +303,7 @@ export default function ContactSection({ locale }: { locale: Locale }) {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-sky-300">
-                    <Mail size={16} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold text-slate-200">E-mail</p>
-                    <p className="mt-1 text-sm text-slate-400">
-                      resul.ankara@rasyatek.com
-                    </p>
-                  </div>
-                </div>
+                
                 <div className="flex items-start gap-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-sky-300">
                     <MapPin size={16} />

@@ -5,9 +5,9 @@ type Locale = "tr" | "en";
 const productsData = [
   {
     icon: <Gauge size={24} />,
-    tag: "SVJ",
-    titleTr: "Statik Var Jeneratör (SVJ)",
-    titleEn: "Static Var Generator (SVJ)",
+    tag: "SVG",
+    titleTr: "Statik Var Generator (SVG)",
+    titleEn: "Static Var Generator (SVG)",
     descTr: "Reaktif güç kompanzasyonu ve güç kalitesi iyileştirme çözümleri. Hızlı tepki süresi ile dinamik kompanzasyon sağlar.",
     descEn: "Reactive power compensation and power quality improvement solutions. Provides dynamic compensation with fast response time.",
     gradient: "from-blue-500/10 to-cyan-500/10",
