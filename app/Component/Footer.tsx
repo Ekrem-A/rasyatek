@@ -44,7 +44,7 @@ export default function Footer({ locale }: { locale: Locale }) {
         {/* ──── Ana İçerik ──── */}
         <div className="grid gap-10 py-12 sm:py-16 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Logo & Açıklama — 4 kolon */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 flex flex-col items-center text-center">
             <a
               href={`/${locale}`}
               className="group relative inline-flex items-center gap-3"
