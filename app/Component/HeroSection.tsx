@@ -121,7 +121,7 @@ export default function HeroSection({ locale }: { locale: Locale }) {
                     href={`/${locale}/iletisim`}
                     className="group inline-flex items-center justify-center gap-2 rounded-full bg-rasyatek-primary px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-rasyatek-primary/25 transition-all hover:bg-sky-700"
                   >
-                    {isEn ? "Request a Quote" : "Teklif Talebi"}
+                    {isEn ? "Request a Quote" : "Proje Talebi"}
                     <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
                   </a>
                   <a

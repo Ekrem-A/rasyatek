@@ -141,6 +141,14 @@ body {
   background-image: linear-gradient(135deg, var(--color-rasyatek-primary) 0%, var(--color-rasyatek-accent) 100%);
 }
 
+/* Hizmet kartı hover shadow glow (renk bazlı) */
+.card-glow-amber:hover   { box-shadow: 0 20px 40px -12px rgb(245 158 11 / 0.20); }
+.card-glow-emerald:hover { box-shadow: 0 20px 40px -12px rgb(16 185 129 / 0.20); }
+.card-glow-blue:hover    { box-shadow: 0 20px 40px -12px rgb(59 130 246 / 0.20); }
+.card-glow-violet:hover  { box-shadow: 0 20px 40px -12px rgb(139 92 246 / 0.20); }
+.card-glow-rose:hover    { box-shadow: 0 20px 40px -12px rgb(244 63 94 / 0.20); }
+.card-glow-sky:hover     { box-shadow: 0 20px 40px -12px rgb(14 165 233 / 0.20); }
+
 /* Section divider */
 .section-divider {
   @apply relative;
