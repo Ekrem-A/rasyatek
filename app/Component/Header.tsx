@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import { Menu, X, ChevronDown, Users, Heart, Eye, Package, Cog } from "lucide-react";
+import { Menu, X, ChevronDown, Users, Heart, Eye, Package, Cog, Home, Phone } from "lucide-react";
 
 type Locale = "tr" | "en";
 
@@ -36,13 +36,13 @@ const dropdownGroups = [
 
 /* ─── All nav links for mobile ─── */
 const allNavLinks = [
-  { href: "", labelTr: "Anasayfa", labelEn: "Home" },
-  { href: "/hakkimizda", labelTr: "Hakkımızda", labelEn: "About" },
-  { href: "/degerler", labelTr: "Değerlerimiz", labelEn: "Our Values" },
-  { href: "/vizyon-misyon", labelTr: "Vizyon & Misyon", labelEn: "Vision & Mission" },
-  { href: "/urunler", labelTr: "Ürünler", labelEn: "Products" },
-  { href: "/hizmetler", labelTr: "Hizmetler", labelEn: "Services" },
-  { href: "/iletisim", labelTr: "İletişim", labelEn: "Contact" },
+  { href: "", labelTr: "Anasayfa", labelEn: "Home", icon: <Home size={16} /> },
+  { href: "/hakkimizda", labelTr: "Hakkımızda", labelEn: "About", icon: <Users size={16} /> },
+  { href: "/degerler", labelTr: "Değerlerimiz", labelEn: "Our Values", icon: <Heart size={16} /> },
+  { href: "/vizyon-misyon", labelTr: "Vizyon & Misyon", labelEn: "Vision & Mission", icon: <Eye size={16} /> },
+  { href: "/urunler", labelTr: "Ürünler", labelEn: "Products", icon: <Package size={16} /> },
+  { href: "/hizmetler", labelTr: "Hizmetler", labelEn: "Services", icon: <Cog size={16} /> },
+  { href: "/iletisim", labelTr: "İletişim", labelEn: "Contact", icon: <Phone size={16} /> },
 ];
 
 /* ─── Desktop Dropdown Bileşeni ─── */
@@ -164,14 +164,16 @@ function MobileMenu({
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-          <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-rasyatek-primary text-white">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <span className="text-sm font-bold text-slate-900">
-              RASYATEK
-            </span>
-          </div>
+          <a href={`/${locale}`} onClick={onClose}>
+            <Image
+              src="/rasyatek-logo.png"
+              alt="Rasyatek Mühendislik Logo"
+              width={160}
+              height={60}
+              className="h-10 w-auto object-contain"
+              style={{ filter: "drop-shadow(0 1px 4px rgba(0,96,170,0.15))" }}
+            />
+          </a>
           <button
             onClick={onClose}
             className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600"
@@ -188,8 +190,11 @@ function MobileMenu({
               key={link.href}
               href={`/${locale}${link.href}`}
               onClick={onClose}
-              className="flex items-center rounded-xl px-4 py-3.5 text-[15px] font-medium text-slate-700 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
+              className="group/mlink flex items-center gap-3 rounded-xl px-4 py-3.5 text-[15px] font-medium text-slate-700 transition-colors hover:bg-rasyatek-primary-soft hover:text-rasyatek-primary"
             >
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-400 transition-all duration-200 group-hover/mlink:bg-rasyatek-primary group-hover/mlink:text-white">
+                {link.icon}
+              </span>
               {isEn ? link.labelEn : link.labelTr}
             </a>
           ))}
