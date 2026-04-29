@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./globals.css";  
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   },
   verification: {
     // Google Search Console doğrulama kodunuzu buraya ekleyin:
-    // google: "xxxxxxxxxxxxxxxxxxxx",
+    google: "google-site-verification=WYwF0V08fq06wrQIkbHCxoCMbweFMGFig-8D2fewn_g",
   },
 };
 
