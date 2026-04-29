@@ -55,10 +55,10 @@ export default function Footer({ locale }: { locale: Locale }) {
                 alt="Rasyatek Mühendislik Logo"
                 width={320}
                 height={120}
-                className="relative h-14 w-auto object-contain brightness-0 invert transition-all duration-500 group-hover:scale-[1.03]"
+                className="relative h-14 w-auto object-contain transition-all duration-500 group-hover:scale-[1.03]"
                 style={{
                   filter:
-                    "brightness(0) invert(1) drop-shadow(0 2px 12px rgba(0,180,216,0.2))",
+                    "drop-shadow(0 2px 12px rgba(0,180,216,0.4))",
                 }}
               />
             </a>
