@@ -155,7 +155,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <div className="mt-5 space-y-4">
               {/* E-posta */}
               <a
-                href="mailto:resul.ankara@rasyatek.com"
+                href="mailto:info@rasyatek.com"
                 className="group/contact flex items-start gap-3 rounded-xl border border-white/5 bg-white/3 px-4 py-3 transition-all duration-300 hover:border-rasyatek-primary/30 hover:bg-white/6"
               >
                 <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-rasyatek-primary/15 text-rasyatek-primary transition-colors group-hover/contact:bg-rasyatek-primary/25">
@@ -166,7 +166,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                     {isEn ? "Email" : "E-posta"}
                   </p>
                   <p className="text-sm text-slate-300 transition-colors group-hover/contact:text-white">
-                    resul.ankara@rasyatek.com
+                    info@rasyatek.com
                   </p>
                 </div>
               </a>
